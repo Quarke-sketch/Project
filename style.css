@@ -97,7 +97,7 @@ body {
         rgba(0, 0, 0, 0) 20%, 
         rgba(0, 0, 0, 0) 80%, 
         rgba(0, 0, 0, 1) 100%
-    ), url('Core.png');
+    ), url('Core.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -109,7 +109,7 @@ body {
         rgba(0, 0, 0, 0) 20%, 
         rgba(0, 0, 0, 0) 80%, 
         rgba(0, 0, 0, 1) 100%
-    ), url('NewHome.png');
+    ), url('NewHome.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,9 +143,9 @@ h1 {
 }
 
 .loc-desc {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(235, 244, 250, 0.9);
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
