@@ -38,8 +38,8 @@ body {
 .ruins { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('Ruins.png'); }
 .snowdin { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('Snowdin.jpg'); }
 .waterfall { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('Waterfall.jpg'); }
-.hotland { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('hotlandd.png'); }
-.core { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('Core.jpg'); }
+.hotland { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('Hotlandd.png'); }
+.core { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('core.jpg'); }
 .new-home { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('NewHome.jpg'); }
 .true-lab { background-image: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('TrueLab.jpg'); }
 
