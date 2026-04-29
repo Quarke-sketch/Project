@@ -228,7 +228,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Функція для ефекту друкарської машинки
             function typeWriter(element, text, speed, callback) {
                 element.innerHTML = '';
                 element.style.display = 'block';
@@ -245,7 +244,6 @@
                 type();
             }
 
-            // Відслідковування скролу для заголовків та коротких описів
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -271,18 +269,17 @@
                 observer.observe(page);
             });
 
-            // Інтерактивність блоку з детальним описом
             document.querySelectorAll('.story-center-block').forEach(block => {
                 const btn = block.querySelector('.reveal-btn');
                 const textEl = block.querySelector('.story-text');
                 const fullText = textEl.getAttribute('data-text');
                 
-                textEl.style.display = 'none'; // Ховаємо текст спочатку
+                textEl.style.display = 'none';
 
                 btn.addEventListener('click', () => {
-                    btn.style.display = 'none'; // Ховаємо кнопку
-                    block.classList.add('expanded'); // Додаємо світіння
-                    typeWriter(textEl, fullText, 15); // Швидко друкуємо текст
+                    btn.style.display = 'none';
+                    block.classList.add('expanded');
+                    typeWriter(textEl, fullText, 15);
                 });
             });
         });

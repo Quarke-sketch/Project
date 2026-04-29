@@ -27,10 +27,8 @@ body {
     flex-direction: column;
     padding: 80px 10%;
     position: relative;
-    /* Відсутність border-bottom прибирає лінію між слайдами */
 }
 
-/* Фони з посиленим градієнтом для ідеально плавоного переходу */
 .intro { background: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('Flowey2.png') center/cover; }
 .ruins { background: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('Ruins.png') center/cover; }
 .snowdin { background: linear-gradient(180deg, #000 0%, transparent 15%, transparent 85%, #000 100%), url('Snowdin.jpg') center/cover; }
@@ -65,7 +63,6 @@ h1 {
     padding: 10px;
 }
 
-/* --- ІНТЕРАКТИВНИЙ БЛОК ІСТОРІЇ --- */
 .story-center-block {
     margin: 40px auto;
     max-width: 850px;
@@ -116,7 +113,6 @@ h1 {
     font-weight: 300;
 }
 
-/* --- КАРТКИ ПЕРСОНАЖІВ --- */
 .content-grid {
     display: flex;
     flex-direction: column;
@@ -150,7 +146,6 @@ h1 {
     border: 3px solid #fff;
     box-shadow: 0 20px 60px rgba(0,0,0,0.8);
     overflow: hidden;
-    /* Плавність для сильного збільшення */
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
 }
 
@@ -160,9 +155,8 @@ h1 {
     object-fit: cover;
 }
 
-/* Ефект сильного збільшення при наведенні */
 .character-card:hover .image-holder {
-    transform: scale(1.18); /* Збільшено ще більше */
+    transform: scale(1.18);
     border-color: #ffff00;
     box-shadow: 0 0 40px rgba(255, 255, 0, 0.5);
     z-index: 100;
