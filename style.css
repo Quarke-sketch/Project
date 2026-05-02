@@ -175,6 +175,15 @@ h1 {
     z-index: 100;
 }
 
+.steam-widget {
+    margin: 50px auto 0;
+    z-index: 20;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     .character-card.right { margin-top: 0; align-self: center; }
