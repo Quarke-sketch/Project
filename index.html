@@ -9,6 +9,7 @@
 <body>
 
     <div class="scroll-wrapper">
+        <!-- Секції локацій -->
         <section class="location-page intro">
             <div class="header">
                 <h1 data-text="Що таке Андертейл"></h1>
@@ -154,7 +155,7 @@
             </div>
         </section>
 
-     <section class="location-page true-lab">
+        <section class="location-page true-lab">
             <div class="header">
                 <h1 data-text="Справжня Лабораторія"></h1>
                 <p class="loc-desc" data-text="Приховане місце, де зберігаються найтемніші таємниці."></p>
@@ -175,17 +176,81 @@
             </div>
         </section>
 
-<footer class="site-footer">
-    <div class="steam-container">
-        <iframe src="https://store.steampowered.com/widget/391540/" frameborder="0" width="646" height="190"></iframe>
+        <!-- Футер -->
+        <footer class="site-footer">
+            <div class="steam-container">
+                <iframe src="https://store.steampowered.com/widget/391540/" frameborder="0" width="646" height="190"></iframe>
+            </div>
+
+            <div class="footer-nav">
+                <a href="https://undertale.com/" target="_blank" class="ut-btn btn-site">* SITE</a>
+                <a href="https://tobyfox.bandcamp.com/album/undertale-soundtrack" target="_blank" class="ut-btn btn-ost">* OST</a>
+                <a href="https://twitter.com/tobyfox" target="_blank" class="ut-btn btn-twitter">* TWITTER</a>
+                <a href="https://undertale.fandom.com/wiki/Main_Page" target="_blank" class="ut-btn">* WIKI</a>
+                <a href="https://www.fangamer.com/collections/undertale" target="_blank" class="ut-btn">* MERCH</a>
+            </div>
+
+            <p class="footer-copyright">Stay Determined. © Toby Fox 2015-2026</p>
+        </footer>
     </div>
 
-    <div class="footer-nav">
-        <a href="https://undertale.com/" target="_blank" class="ut-btn btn-site">* SITE</a>
-        <a href="https://tobyfox.bandcamp.com/album/undertale-soundtrack" target="_blank" class="ut-btn btn-ost">* OST</a>
-        <a href="https://twitter.com/tobyfox" target="_blank" class="ut-btn btn-twitter">* TWITTER</a>
-        <a href="https://undertale.fandom.com/wiki/Main_Page" target="_blank" class="ut-btn">* WIKI</a>
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            function typeWriter(element, text, speed, callback) {
+                element.innerHTML = '';
+                element.style.display = 'block';
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else if (callback) {
+                        callback();
+                    }
+                }
+                type();
+            }
 
-    <p class="footer-copyright">Stay Determined. © Toby Fox 2015-2026</p>
-</footer>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const h1 = entry.target.querySelector('h1');
+                        const desc = entry.target.querySelector('.loc-desc');
+
+                        if (h1 && !h1.classList.contains('typed')) {
+                            const h1Text = h1.getAttribute('data-text');
+                            typeWriter(h1, h1Text, 40);
+                            h1.classList.add('typed');
+                        }
+
+                        if (desc && !desc.classList.contains('typed')) {
+                            const descText = desc.getAttribute('data-text');
+                            setTimeout(() => { typeWriter(desc, descText, 15); }, 500); 
+                            desc.classList.add('typed');
+                        }
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.location-page').forEach(page => {
+                observer.observe(page);
+            });
+
+            document.querySelectorAll('.story-center-block').forEach(block => {
+                const btn = block.querySelector('.reveal-btn');
+                const textEl = block.querySelector('.story-text');
+                const fullText = textEl.getAttribute('data-text');
+                
+                textEl.style.display = 'none';
+
+                btn.addEventListener('click', () => {
+                    btn.style.display = 'none';
+                    block.classList.add('expanded');
+                    typeWriter(textEl, fullText, 15);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
