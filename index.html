@@ -175,89 +175,22 @@
             </div>
         </section>
 
-        <footer class="site-footer">
-            <div class="footer-content">
-                <div class="steam-container">
-                    <iframe src="https://store.steampowered.com/widget/391540/" frameborder="0" width="646" height="190"></iframe>
-                </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Ресурси</h4>
-                        <a href="https://undertale.com/" target="_blank">* Офіційний сайт</a>
-                        <a href="https://undertale.fandom.com/wiki/Main_Page" target="_blank">* Undertale Wiki</a>
-                    </div>
-                    <div class="link-group">
-                        <h4>Музика та Мерч</h4>
-                        <a href="https://tobyfox.bandcamp.com/album/undertale-soundtrack" target="_blank">* Soundtrack (Bandcamp)</a>
-                        <a href="https://www.fangamer.com/collections/undertale" target="_blank">* Офіційний мерч</a>
-                    </div>
-                    <div class="link-group">
-                        <h4>Автор</h4>
-                        <a href="https://twitter.com/tobyfox" target="_blank">* Toby Fox (Twitter)</a>
-                    </div>
-                </div>
-                <p class="copyright">Stay Determined. © Toby Fox 2015-2024</p>
-            </div>
-        </footer>
+<footer class="site-footer">
+    <div class="footer-content">
+        <!-- Віджет Стім зверху -->
+        <div class="steam-container">
+            <iframe src="https://store.steampowered.com/widget/391540/" frameborder="0" width="646" height="190"></iframe>
+        </div>
+
+        <!-- Компактні посилання -->
+        <div class="footer-links-row">
+            <a href="https://undertale.com/" class="f-link link-site" target="_blank">* Офіційний Сайт</a>
+            <a href="https://tobyfox.bandcamp.com/album/undertale-soundtrack" class="f-link link-ost" target="_blank">* Саундтрек</a>
+            <a href="https://twitter.com/tobyfox" class="f-link link-twitter" target="_blank">* Twitter Автора</a>
+            <a href="https://undertale.fandom.com/wiki/Main_Page" class="f-link" target="_blank">* Wiki</a>
+            <a href="https://www.fangamer.com/collections/undertale" class="f-link" target="_blank">* Мерч</a>
+        </div>
+
+        <p class="copyright">Stay Determined. © Toby Fox 2015-2026</p>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            function typeWriter(element, text, speed, callback) {
-                element.innerHTML = '';
-                element.style.display = 'block';
-                let i = 0;
-                function type() {
-                    if (i < text.length) {
-                        element.innerHTML += text.charAt(i);
-                        i++;
-                        setTimeout(type, speed);
-                    } else if (callback) {
-                        callback();
-                    }
-                }
-                type();
-            }
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const h1 = entry.target.querySelector('h1');
-                        const desc = entry.target.querySelector('.loc-desc');
-
-                        if (h1 && !h1.classList.contains('typed')) {
-                            const h1Text = h1.getAttribute('data-text');
-                            typeWriter(h1, h1Text, 40);
-                            h1.classList.add('typed');
-                        }
-
-                        if (desc && !desc.classList.contains('typed')) {
-                            const descText = desc.getAttribute('data-text');
-                            setTimeout(() => { typeWriter(desc, descText, 15); }, 500); 
-                            desc.classList.add('typed');
-                        }
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            document.querySelectorAll('.location-page').forEach(page => {
-                observer.observe(page);
-            });
-
-            document.querySelectorAll('.story-center-block').forEach(block => {
-                const btn = block.querySelector('.reveal-btn');
-                const textEl = block.querySelector('.story-text');
-                const fullText = textEl.getAttribute('data-text');
-                
-                textEl.style.display = 'none';
-
-                btn.addEventListener('click', () => {
-                    btn.style.display = 'none';
-                    block.classList.add('expanded');
-                    typeWriter(textEl, fullText, 15);
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+</footer>
